@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 import BackButton from '~/components/BackButton';
 import Introduction from '~/components/useCallback/Introduction';
@@ -11,6 +12,12 @@ import FifthExample from '~/components/useCallback/FifthExample';
 const OuterUseCallbackPage = styled.div``;
 
 const UseCallbackPage = () => {
+  useEffect(() => {
+    return () => {
+      document.title = 'React Hooks';
+    };
+  });
+
   return (
     <OuterUseCallbackPage>
       <BackButton />
