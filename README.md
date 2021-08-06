@@ -1,12 +1,26 @@
-# Exemplos
+# :rocket: React Hooks
 
-## Objetivo
+## :exclamation: Requirements
 
-Repositório com variados exemplos de Monorepo, Relay, GraphQL, Docker, React.js, React Native, Node.js, TypeScript, entre outros.
+- Docker
+- Node >= 10
+- Yarn
 
-## Exemplos
+## :computer: Getting started
 
-- [Relay & GraphQL - Monorepo](https://github.com/enfase/exemplos/tree/graphql-relay-monorepo)
-- [React Native - Monorepo](https://github.com/enfase/exemplos/tree/react-native-monorepo)
-- [React, Node & Postgres - Monorepo](https://github.com/enfase/exemplos/tree/react-node-postgres-monorepo)
-- [React - Context API](https://github.com/enfase/exemplos/tree/react-context-api)
+### Development mode
+
+- `yarn`: Installs workspace dependencies
+- `yarn start`: Starts the project
+- Open the webapp at `http://localhost:8081`
+
+### Stopping
+
+- `yarn stop`: Stops the project
+
+### Bibliography
+
+- https://pt-br.reactjs.org/docs/hooks-rules.html
+- https://pt-br.reactjs.org/docs/hooks-custom.html
+- https://betterprogramming.pub/understanding-the-useeffect-dependency-array-2913da504c44
+- https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#anti-pattern-unconditionally-copying-props-to-state

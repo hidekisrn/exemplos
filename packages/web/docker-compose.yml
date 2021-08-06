@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  web:
+    image: node:latest
+    container_name: example-web
+    working_dir: /workshop/packages/web
+    entrypoint: yarn start
+    ports:
+      - '8081:8081'

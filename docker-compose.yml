@@ -1,0 +1,9 @@
+version: '2.4'
+
+services:
+  web:
+    extends:
+      file: packages/web/docker-compose.yml
+      service: web
+    volumes:
+      - $PWD:/workshop
