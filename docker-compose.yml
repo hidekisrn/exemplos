@@ -6,4 +6,4 @@ services:
       file: packages/web/docker-compose.yml
       service: web
     volumes:
-      - $PWD:/workshop
+      - $PWD:/exemplos
