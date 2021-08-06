@@ -1,5 +1,11 @@
+import styled from 'styled-components';
+
 import Container from '~/components/Container';
 import useFetch from '~/hooks/useFetch';
+
+const Image = styled.img`
+  width: 300px;
+`;
 
 type returnType = {
   status: number;
@@ -19,14 +25,14 @@ const SecondExample = () => {
     return <Container>Erro!</Container>;
   }
 
-  const dogName = response.data?.status;
+  const status = response.data?.status;
   const imageUrl = response.data?.message;
 
   return (
     <Container>
-      <h3>Status: {dogName}</h3>
+      <h3>Status: {status}</h3>
       <div>
-        <img src={imageUrl} alt="Random Dog" width={300} />
+        <Image src={imageUrl} alt="Random Dog" />
       </div>
     </Container>
   );
