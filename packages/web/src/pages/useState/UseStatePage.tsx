@@ -8,6 +8,7 @@ import SecondExample from '~/components/useState/SecondExample';
 import ThirdExample from '~/components/useState/ThirdExample';
 import FourthExample from '~/components/useState/FourthExample';
 import FifthExample from '~/components/useState/FifthExample';
+import SecondFifthExample from '~/components/useState/SecondFifthExample';
 import SixthExample from '~/components/useState/SixthExample';
 import SeventhExample from '~/components/useState/SeventhExample';
 
@@ -30,6 +31,7 @@ const UseStatePage = () => {
       <ThirdExample />
       <FourthExample />
       <FifthExample />
+      <SecondFifthExample />
       <SixthExample email="lucasgdbittencourt@gmail.com" />
       <SeventhExample email={email} onChange={handleChangeEmail} />
     </OuterUseStatePage>

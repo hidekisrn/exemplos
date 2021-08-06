@@ -19,7 +19,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const FifthExample = () => {
+const SecondFifthExample = () => {
   const [count, setCount] = useState(0);
   const [secondCount, setSecondCount] = useState(0);
   const [thirdCount, setThirdCount] = useState(0);
@@ -27,11 +27,19 @@ const FifthExample = () => {
   const [fifthCount, setFifthCount] = useState(0);
 
   const handleCount = () => {
-    setCount(prevCount => prevCount + 1);
-    setSecondCount(prevSecondCount => prevSecondCount + 1);
-    setThirdCount(prevThirdCount => prevThirdCount + 1);
-    setFourthCount(prevFourthCount => prevFourthCount + 1);
-    setFifthCount(prevFifthCount => prevFifthCount + 1);
+    function func() {
+      return new Promise<void>(resolve => {
+        setTimeout(() => resolve(), 500);
+      });
+    }
+
+    func().then(() => {
+      setCount(prevCount => prevCount + 1);
+      setSecondCount(prevSecondCount => prevSecondCount + 1);
+      setThirdCount(prevThirdCount => prevThirdCount + 1);
+      setFourthCount(prevFourthCount => prevFourthCount + 1);
+      setFifthCount(prevFifthCount => prevFifthCount + 1);
+    });
   };
 
   useEffect(() => {
@@ -40,7 +48,7 @@ const FifthExample = () => {
 
   return (
     <Container>
-      <Title>Quinto exemplo</Title>
+      <Title>Quinto exemplo pt. 2</Title>
       <SubTitle>Automatic batching for fewer renders</SubTitle>
 
       <SubContainer>
@@ -58,4 +66,4 @@ const FifthExample = () => {
   );
 };
 
-export default FifthExample;
+export default SecondFifthExample;
