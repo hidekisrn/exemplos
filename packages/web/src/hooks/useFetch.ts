@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 type useFetchReturnType<T> = {
-  data: T | null;
+  response: AxiosResponse<T> | null;
   loading: boolean;
   error: Error | null;
 };
 
 function useFetch<T>(
   url: string,
-  options: RequestInit = {},
+  options?: AxiosRequestConfig,
 ): useFetchReturnType<T> {
-  const [data, setData] = useState(null);
+  const [response, setData] = useState<AxiosResponse<T> | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,10 +19,9 @@ function useFetch<T>(
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(url, options);
-        const json = await res.json();
+        const res = await axios.get(url, options);
 
-        setData(json ?? null);
+        setData(res);
       } catch (err) {
         setError(err);
       } finally {
@@ -33,7 +33,7 @@ function useFetch<T>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return { data, loading, error };
+  return { response, loading, error };
 }
 
 export default useFetch;

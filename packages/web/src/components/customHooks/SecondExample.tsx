@@ -1,5 +1,4 @@
 import Container from '~/components/Container';
-import SubContainer from '~/components/SubContainer';
 import useFetch from '~/hooks/useFetch';
 
 type returnType = {
@@ -8,30 +7,27 @@ type returnType = {
 };
 
 const SecondExample = () => {
-  const { data, error, loading } = useFetch<returnType>(
+  const { response, error, loading } = useFetch<returnType>(
     'https://dog.ceo/api/breeds/image/random',
   );
 
   if (loading) {
     return <Container>Carregando...</Container>;
   }
-  console.log(data);
 
-  if (error || !data) {
+  if (error || !response) {
     return <Container>Erro!</Container>;
   }
 
-  const dogName = data.status;
-  const imageUrl = data.message;
+  const dogName = response.data?.status;
+  const imageUrl = response.data?.message;
 
   return (
     <Container>
-      <SubContainer>
-        <h3>{dogName}</h3>
-        <div>
-          <img src={imageUrl} alt="Random Dog" width={300} />
-        </div>
-      </SubContainer>
+      <h3>Status: {dogName}</h3>
+      <div>
+        <img src={imageUrl} alt="Random Dog" width={300} />
+      </div>
     </Container>
   );
 };
