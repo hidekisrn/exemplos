@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import BackButton from '~/components/BackButton';
+import Introduction from '~/components/useMemo/Introduction';
 import FirstExample from '~/components/useMemo/FirstExample';
 import SecondExample from '~/components/useMemo/SecondExample';
-import Introduction from '~/components/useMemo/Introduction';
+import ThirdExample from '~/components/useMemo/ThirdExample';
 
 const OuterUseMemoPage = styled.div``;
 
@@ -15,6 +16,7 @@ const UseMemoPage = () => {
       <Introduction />
       <FirstExample />
       <SecondExample />
+      <ThirdExample />
     </OuterUseMemoPage>
   );
 };
